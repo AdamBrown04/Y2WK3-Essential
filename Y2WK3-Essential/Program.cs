@@ -127,6 +127,7 @@ switch (option)
 
         Console.WriteLine($"The highest width is: {widths.Max()} \nThe highest height is: {heights.Max()} \nThe total area is: {totalArea}");
         break;
+        break;
 }
 
 class Car(string make, string model, string regPlate, int yearMade)
