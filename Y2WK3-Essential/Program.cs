@@ -82,7 +82,14 @@ switch (option)
         studentIDs.Add("b654321");
         studentIDs.Add("c321456");
 
-        IEnumerable<string> formattedStudentIDs = studentIDs.Select(ID => ID.Replace("A", "1"), ID.Replace("B", "2"));
+        IEnumerable<string> formattedA = studentIDs.Select(ID => ID.Replace("a", "1"));
+        IEnumerable<string> formattedB = formattedA.Select(ID => ID.Replace("b", "2"));
+        IEnumerable<string> finalFormat = formattedB.Select(ID => ID.Replace("c", "3"));
+
+        foreach(string ID in finalFormat)
+        {
+            Console.WriteLine(ID);
+        }
         break;
 }
 
