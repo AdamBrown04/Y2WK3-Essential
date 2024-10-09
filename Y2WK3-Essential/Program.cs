@@ -1,4 +1,6 @@
-﻿Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256 \n3)Order car by year of production \n4)Student ID formatter");
+﻿using System.Security.Cryptography.X509Certificates;
+
+Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256 \n3)Order car by year of production \n4)Student ID formatter \n5)Rectangle fun");
 int option = Convert.ToInt32(Console.ReadLine());
 
 switch (option)
@@ -91,6 +93,20 @@ switch (option)
             Console.WriteLine(ID);
         }
         break;
+    case 5:
+        Rectangle R1 = new Rectangle(15, 12);
+        Rectangle R2 = new Rectangle(10, 22);
+        Rectangle R3 = new Rectangle(9,7);
+        Rectangle R4 = new Rectangle(18, 20);
+
+        List<Rectangle> rectangles = new List<Rectangle>();
+        rectangles.Add(R1);
+        rectangles.Add(R2);
+        rectangles.Add(R3);
+        rectangles.Add(R4);
+
+        
+        break;
 }
 
 class Car(string make, string model, string regPlate, int yearMade)
@@ -99,4 +115,10 @@ class Car(string make, string model, string regPlate, int yearMade)
     public string model = model;
     public string regPlate = regPlate;
     public int yearMade = yearMade;
+}
+
+class Rectangle(int height, int width) 
+{
+    public int height = height;
+    public int width = width;
 }
