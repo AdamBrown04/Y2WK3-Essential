@@ -1,4 +1,4 @@
-﻿Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256 \n3)Order car by year of production");
+﻿Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256 \n3)Order car by year of production \n4)Student ID formatter");
 int option = Convert.ToInt32(Console.ReadLine());
 
 switch (option)
@@ -75,6 +75,14 @@ switch (option)
         {
             Console.WriteLine($"{car.make} {car.model}");
         }
+        break;
+    case 4:
+        List<string> studentIDs = new List<string>();
+        studentIDs.Add("a123456");
+        studentIDs.Add("b654321");
+        studentIDs.Add("c321456");
+
+        IEnumerable<string> formattedStudentIDs = studentIDs.Select(ID => ID.Replace("A", "1"), ID.Replace("B", "2"));
         break;
 }
 
