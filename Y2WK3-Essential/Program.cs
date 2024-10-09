@@ -39,8 +39,22 @@ switch (option)
 
             if(numberInput.ToUpper() == "END")
             {
-
+                break;
             }
+            else
+            {
+                listOfNumbers.Add(Convert.ToInt32(numberInput));
+            }
+        }
+
+        bool withinRange = listOfNumbers.All(n => n < 256 && n > 0);
+        if (withinRange)
+        {
+            Console.WriteLine("All numbers are within range");
+        }
+        else
+        {
+            Console.WriteLine("Not all numbers are within range");
         }
         break;
 }
