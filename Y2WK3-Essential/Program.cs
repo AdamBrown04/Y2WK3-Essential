@@ -1,4 +1,4 @@
-﻿Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256");
+﻿Console.WriteLine("What porgram do you want to run? \n1)Username with underscore \n2)Check if number is between 0 and 256 \n3)Order car by year of production");
 int option = Convert.ToInt32(Console.ReadLine());
 
 switch (option)
@@ -57,4 +57,31 @@ switch (option)
             Console.WriteLine("Not all numbers are within range");
         }
         break;
+    case 3:
+        List<Car> cars = new List<Car>();
+
+        Car newCar3 = new Car("Ford", "Cortina", "KJM 212K", 1972);
+        Car newCar1 = new Car("Kia", "Cee'd", "PK10 RBO", 2010);
+        Car newCar2 = new Car("Audi", "Quatro", "JLY 75IV", 1980);
+        
+
+        cars.Add(newCar1);
+        cars.Add(newCar2);
+        cars.Add(newCar3);
+
+        IEnumerable<Car> orderedCars = cars.OrderBy(car => car.yearMade);
+
+        foreach (Car car in orderedCars)
+        {
+            Console.WriteLine($"{car.make} {car.model}");
+        }
+        break;
+}
+
+class Car(string make, string model, string regPlate, int yearMade)
+{
+    public string make = make;
+    public string model = model;
+    public string regPlate = regPlate;
+    public int yearMade = yearMade;
 }
