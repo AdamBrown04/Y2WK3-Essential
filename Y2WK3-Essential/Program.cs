@@ -105,7 +105,27 @@ switch (option)
         rectangles.Add(R3);
         rectangles.Add(R4);
 
-        
+        List<int> widths = new List<int>();
+        foreach(Rectangle R in rectangles)
+        {
+            widths.Add(R.width);
+        }
+
+        List<int> heights = new List<int>();
+        foreach(Rectangle R in rectangles)
+        {
+            heights.Add(R.height);
+        }
+
+        List<int> areas = new List<int>();
+        foreach(Rectangle R in rectangles)
+        {
+            areas.Add(R.height * R.width);
+        }
+
+        int totalArea = areas.Sum();
+
+        Console.WriteLine($"The highest width is: {widths.Max()} \nThe highest height is: {heights.Max()} \nThe total area is: {totalArea}");
         break;
 }
 
